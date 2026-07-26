@@ -1,11 +1,11 @@
 -- 1/ Find out number of orders, unique products, customers, and product categories
-select count(orderid) as no_of_orders,
+select count(distinct orderid) as no_of_orders,
 	   count(distinct productname) as no_of_products,
 	   count(distinct customerid) as no_of_customers,
 	   count(distinct productcategory) as no_of_product_categories
 from vw_full_orders
 
---2/ Find out the unique products and their categories and theirs prices in the full_orders dataset
+--2/ Find out the unique products and their categories and prices 
 select productname,
 	   productcategory, 
 	   price
@@ -13,11 +13,11 @@ from vw_full_orders
 group by productname, productcategory,price
 order by price desc
 
---3/Average price, revenue of products,number of orders in each product category during the period of 2023-2025
+--3/Average price, revenue of products,number of orders in each product category during the period of Jan 2023 - Nov 2025
 select productcategory, 
        avg(price) average_price, 
 	   avg(revenue) average_revenue,
-	   count(orderid) as no_of_orders
+	   count(distinct orderid) as no_of_orders
 from vw_full_orders
 group by productcategory
 order by avg(price) desc
@@ -53,13 +53,15 @@ from (
 		) t
 where ranking <=3
 
---6/ The number of customers in each region during the period of Jan 2023- Nov 2025 and their contribution to the total revenue
+--6/ The number of customers in each region during the period of Jan 2023- Nov 2025 , their contribution to the total revenue and the average orders each region have
 select region, 
 	   count(distinct customerid) as no_of_customers,
+	   sum(quantity) / count(distinct customerid) as average_order_per_customers,
 	   sum(revenue) as total_revenue,
 	   round(sum(revenue)/(select sum(revenue) from vw_full_orders),2) as revenue_contribution
 from vw_full_orders
 group by region
+order by total_revenue desc
 
 --7/Revenue contribution of each bought products
 select productid, 
@@ -82,7 +84,11 @@ group by year(orderdate), datename(month,orderdate)
 order by sum(revenue) desc
 
 --9/ Customers who have generated revenue the most(top 3) in each region during the period of Jan 2023- Nov 2025 and how many  products  for each of those customers 
-select order_year, region, customerid, total_quantity, total_revenue
+select order_year, 
+	   region, 
+	   customerid, 
+	   total_quantity, 
+	   total_revenue
 from (
 		select year(orderdate) as order_year, 
 			   region, 
@@ -113,6 +119,7 @@ order by region , year(orderdate), month(orderdate) asc
 --11/ Top customers contributed to the revenue
 select top 10 customerid, 
 	   sum(revenue) as total_revenue , 
+	   sum(revenue)*100 / (select sum(revenue) from vw_full_orders) as revenue_countribution,
 	   sum(quantity) as total_quantity
 from vw_full_orders
 group by customerid
@@ -122,10 +129,12 @@ order  by sum(revenue) desc
 select top 10 productid,
 	   productname,
 	   sum(revenue) as total_revenue,
+	   sum(revenue) / (select sum(revenue) from vw_full_orders) as revenue_countribution,
 	   sum(quantity) as total_quantity
 from vw_full_orders
 group by productid,productname
 order by sum(revenue) desc
+
 
 --13/ Running Revenue
 select order_year, 
@@ -143,23 +152,4 @@ from (
 		) t
 group by order_year, order_month, region, total_revenue
 
---14/Pareto analysis by products
-/*with product_sales as
-(
-    select
-        productname,
-		productcategory,
-        sum(revenue) as total_revenue
-    from vw_full_orders
-    group by productname,productcategory
-)
 
-select
-    productname, 
-	productcategory,
-    total_revenue,
-    sum(total_revenue) over (order by total_revenue desc) as cumulative_revenue,
-    round(100.0 * sum(total_revenue) over (order by total_revenue desc) / sum(total_revenue) over(),2) as cumulative_percentage
-from product_sales
-order by total_revenue desc;
---> To generate 80% of the revenue, there are at least 11 products that need to be sold.*/
