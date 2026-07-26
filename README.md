@@ -6,7 +6,30 @@ This project analyzes sales performance for a retail business from January 2023 
 
 ---
 
-## 2. Data Structure Overview
+## 2. Project Files
+### Dashboard
+- 📊 [Power BI Dashboard (.pbix)](sales_performance_dashboard.pbix)
+
+### SQL Scripts
+- 🧹 [Data_validation.sql](SQL/Data_validation.sql)
+- 🔄 [Data_preparation.sql](SQL/Data_preparation.sql)
+- 📈 [business_questions.sql](SQL/business_questions.sql)
+
+### Dataset
+- 👥 [customers.csv](Data/customers.csv)
+- 📦 [products.csv](Data/products.csv)
+- 🛒 [Orders_2023.csv](Data/Orders_2023.csv)
+- 🛒 [Orders_2024.csv](Data/Orders_2024.csv)
+- 🛒 [Orders_2025.csv](Data/Orders_2025.csv)
+
+### Images
+- 🗺️ [ERD](Images/ERD.png)
+- 📊 [Sales Performance Overview](Images/OverallRevenue.png)
+- 👥 [Products & Customers Dashboard](Images/Product&Customers.png)
+  
+---
+
+## 3. Data Structure Overview
 
 The dataset consists of five tables:
 
@@ -17,13 +40,14 @@ The dataset consists of five tables:
 - **Orders_2025** – Sales transactions in 2025 (January - November)
 
 Here is the ERD:
+
 ![ERD](Images/ERD.png)
 
 *The transactional data was originally stored in three separate tables (Orders_2023, Orders_2024, and Orders_2025). As these tables share the same schema, they are represented as a single Orders entity in the ERD for simplicity. During data preparation, the three tables were merged into the analytical view vw_full_orders.
 
 ---
 
-## 3. Executive Summary
+## 4. Executive Summary
 
 - West and East were two regions that generated the highest revenue, contributing 73% of total sales.
 - Revenue consistently peaked during the final months of each year, indicating strong seasonal demand.
@@ -34,34 +58,15 @@ Here is the ERD:
 
 ---
 
-## 4. Recommendations
+## 5. Recommendations
 
 - Prioritize inventory planning for the highest-performing products, especially before year-end peak seasons.
+
 - Continue investing in high-performing regions while developing targeted strategies to improve sales in lower-performing regions.
+
 - Implement loyalty or membership programs to retain high-value customers.
+
 - Focus marketing campaigns on top-selling product categories while exploring opportunities to increase sales of lower-performing products.
+
 - Regularly monitor sales performance through dashboards to support timely business decisions.
 
-## 5. Project Structure
-
-Sales-Performance-Analysis/
-│
-├── Data files/
-│   ├── customers.csv
-│   ├── products.csv
-│   ├── Orders_2023.csv
-│   ├── Orders_2024.csv
-│   └── Orders_2025.csv
-│
-├── Images/
-│   ├── ERD.png
-│   ├── Overall Revenue.png
-│   └── Product&Customers.png
-│
-├── SQL Files/
-│   ├── 01_Data_validation.sql
-│   ├── 02_Data_preparation.sql
-│   └── 03_business_questions.sql
-│
-└── README.md 
-└── sales_performance_dashboard.pbix
