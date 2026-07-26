@@ -17,7 +17,7 @@ The dataset consists of five tables:
 - **Orders_2025** – Sales transactions in 2025 (January - November)
 
 Here is the ERD:
-
+![ERD](Images/ERD.png)
 
 *The transactional data was originally stored in three separate tables (Orders_2023, Orders_2024, and Orders_2025). As these tables share the same schema, they are represented as a single Orders entity in the ERD for simplicity. During data preparation, the three tables were merged into the analytical view vw_full_orders.
 
@@ -43,7 +43,7 @@ Here is the ERD:
 - Regularly monitor sales performance through dashboards to support timely business decisions.
 
 ## 5. Project Structure
-```
+
 Sales-Performance-Analysis/
 │
 ├── Data files/
@@ -65,4 +65,3 @@ Sales-Performance-Analysis/
 │
 └── README.md 
 └── sales_performance_dashboard.pbix
-```
