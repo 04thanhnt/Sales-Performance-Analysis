@@ -2,7 +2,15 @@
 
 ## 1. Background & Overview
 
-This project analyzes sales performance for a retail business from January 2023 to November 2025 using SQL Server and Power BI. The objective is to evaluate overall business performance, identify sales trends, analyze customer purchasing behavior, and uncover product performance to support data-driven decision-making.
+This project analyzes the sales performance of a retail business across **2023 to November 2025**, using sales, customer, and product data to evaluate overall business performance and identify key areas for improvement.
+
+The analysis focuses on three key areas:
+
+- **Revenue & Regional Performance:** Evaluate revenue trends, seasonality, and regional contributions to overall sales.
+- **Customer Performance:** Compare customer volume and customer value across regions to identify differences in purchasing behavior.
+- **Product & Profitability:** Assess product and category performance based on revenue, gross profit, gross margin, and average order value.
+
+The analysis was conducted using **SQL Server for data validation, preparation, and analysis**, and **Power BI for interactive business reporting and visualization**.
 
 ---
 
@@ -25,7 +33,7 @@ This project analyzes sales performance for a retail business from January 2023 
 ### Images
 - 🗺️ [ERD](Images/ERD.png)
 - 📊 [Sales Performance Overview](Images/OverallRevenue.png)
-- 👥 [Products & Customers Dashboard](Images/Product&Customers.png)
+- 👥 [Products & Customers Dashboard](Images/Product&CustomersInsights.png)
   
 ---
 
@@ -48,23 +56,103 @@ Here is the ERD:
 ---
 
 ## 4. Executive Summary
+## Overview of Findings
+- The business generated approximately **$871K in revenue and $478K in gross profit** from 2023 to November 2025, with gross margin remaining relatively stable at approximately **50–60%**. Revenue was highly concentrated in the **West and East regions, which jointly contributed approximately 73% of total revenue**, while **North and South generated higher revenue per customer despite having smaller customer bases**.
 
-- West and East were two regions that generated the highest revenue, contributing 73% of total sales.
-- Revenue consistently peaked during the final months of each year, indicating strong seasonal demand.
-- Grinders & Brewers was the highest-performing product category (\$500k), generating nearly three times more revenue than the second-ranked category (Subscription).
-- The majority of transactions maintained a gross margin between 50% and 60%, indicating that the business retained more than half of its sales revenue after covering product costs, suggesting healthy product profitability.
+- At the product level, **Grinders & Brewers** was a major driver of revenue and gross profit, while **Subscriptions achieved the highest gross margin at approximately 63–66%**. In contrast, **Merchandise generated relatively low revenue and maintained the lowest gross margins**, suggesting potential opportunities for further product and profitability review.
 
-- Although East and West had the largest customer base, the average number of orders per customer was only slightly higher than in the North and South regions, suggesting that higher revenue in these regions was primarily driven by customer volume rather than stronger purchasing frequency.
 
----
+## 5. Insights Deep Dive
 
-## 5. Recommendations
+### 5.1. Revenue & Regional Performance
 
-- Prioritize inventory planning for the highest-performing products, especially before year-end peak seasons.
+### Revenue is concentrated in West and East
+<img width="412" height="190" alt="Screenshot 2026-08-11 082406" src="https://github.com/user-attachments/assets/ad3716b1-4476-433c-97f6-4abf541f9d29" />
 
-- Continue investing in high-performing regions while developing targeted strategies to improve sales in lower-performing regions.
+<img width="412" height="272" alt="Screenshot 2026-08-11 082818" src="https://github.com/user-attachments/assets/413bb279-73c7-4016-ae98-ffe8d0690446" />
 
-- Implement loyalty or membership programs to retain high-value customers.
+- **West and East jointly contributed approximately 73% of total revenue**, making them the primary revenue-generating regions.
+- West showed particularly strong performance in **Q1**, contributing approximately **44.5–47.5% of quarterly revenue** across the observed years.
+
+### Revenue shows a recurring seasonal pattern
+
+- Revenue generally peaks toward the **end of the year**, particularly in **November and December in years with complete data**.
+- This recurring pattern suggests a potential **seasonal increase in customer demand** toward year-end.
+
+### Gross margin remained relatively stable
+
+- Monthly gross margin generally remained within the **50–60% range** throughout the observed period.
+- Despite fluctuations in monthly revenue, the overall margin remained relatively stable.
+
+--> This suggests that the business maintained a relatively consistent pricing and product cost structure during the observed period.
+
+
+
+### 5.2. Customer Value & Regional Behavior
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9df353aa-0016-49dc-be15-80455150c656" alt="Dashboard" width="900">
+</p>
+
+### Customer volume does not fully explain regional customer value
+
+- **West and East have substantially larger customer bases**, with their combined customer count approximately **three times that of North and South**.
+- However, **North and South generate higher average revenue per customer** despite having smaller customer bases.
+
+--> This indicates that regional performance differs not only in customer acquisition volume but also in customer value.
+
+### North and South have a higher concentration of high-value customers
+
+- **60% of the top 10 customers by revenue are located in North and South**, despite these regions having considerably fewer customers overall.
+- Revenue from these high-value customers is largely associated with **Grinders & Brewers**, suggesting that purchasing patterns and product preferences may contribute to the higher customer value observed in these regions.
+
+### Customer value should be considered alongside customer volume
+
+- West and East benefit from a **larger customer base**, which supports their high overall revenue contribution.
+- North and South, however, demonstrate **higher revenue per customer and a greater presence among top-value customers**.
+
+--> Therefore, regional performance should be evaluated using both customer scale and customer value rather than total revenue alone.
+
+
+
+### 5.3. Product & Profitability
+
+<img width="542" height="475" alt="Screenshot 2026-08-11 082543" src="https://github.com/user-attachments/assets/55b4fd5b-5200-43d4-8093-4d80c6087529" />
+
+
+<img width="442" height="200" alt="Screenshot 2026-08-11 082633" src="https://github.com/user-attachments/assets/4c9fc948-7012-4ead-a937-c8c6d48adfc8" />
+
+### Grinders & Brewers is the main revenue and gross profit driver
+
+- **Grinders & Brewers** is a major contributor to both revenue and gross profit.
+- It also has one of the highest AOVs among product categories, with an AOV approximately **three times higher than Subscriptions**.
+
+--> The category plays an important role in driving overall financial performance through both transaction value and total sales contribution.
+
+### Subscriptions have the strongest profitability
+
+- **Subscriptions consistently achieve the highest gross margin, approximately 63–66% across regions.**
+- This means a relatively large proportion of its revenue is retained as gross profit after product costs.
+- Its combination of substantial revenue contribution and high margin makes it an important category from a profitability perspective.
+
+### Merchandise is the weakest-performing category
+
+- Merchandise generates relatively low revenue compared with the stronger-performing categories.
+- Its gross margin is also consistently among the lowest, at approximately **35–38% across regions**.
+
+--> The combination of low revenue and low margin suggests that Merchandise may warrant further review of its pricing, costs, or product strategy.
+
+
+## 6. Recommendations
+
+Based on the insights and findings above, we recommend the **Sales and Commercial Management teams** consider the following:
+
+- **Prioritize high-value product categories while reviewing underperforming products.** Grinders & Brewers is a major driver of revenue and gross profit, while Subscriptions achieve the highest gross margin. The business should maintain strong support for these categories while reviewing the pricing, costs, and product mix of lower-performing Merchandise products.
+
+- **Develop North and South based on customer value.** Although these regions have smaller customer bases, they generate higher revenue per customer and contain a relatively high share of top-value customers. Management should analyze their purchasing behavior and product preferences to identify opportunities for targeted customer acquisition and retention.
+
+- **Diversify regional growth while maintaining core markets.** West and East contribute approximately **73% of total revenue**, indicating strong performance but also regional concentration. The business should continue supporting these markets while exploring opportunities to expand customer acquisition and revenue in North and South.
+
+- **Incorporate seasonality into operational planning.** Since revenue tends to peak toward the end of the year, management should use historical seasonal patterns to improve **inventory, staffing, and promotional planning** ahead of the November–December period.
 
 - Focus marketing campaigns on top-selling product categories while exploring opportunities to increase sales of lower-performing products.
 
