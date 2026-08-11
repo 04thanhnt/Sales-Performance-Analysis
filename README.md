@@ -90,7 +90,9 @@ Here is the ERD:
 
 
 ### 5.2. Customer Value & Regional Behavior
-![Customer&Regional](Images/Customer&Regional.png)
+<p align="center">
+  <img src="Images/Customer&Regional.png" width="70%">
+</p>
 
 ### Customer volume does not fully explain regional customer value
 
@@ -116,7 +118,7 @@ Here is the ERD:
 ### 5.3. Product & Profitability
 
 <p>
-  <img src="Images/Customer&Regional.png" width="48%">
+  <img src="Images/Profitability.png" width="48%">
   <img src="Images/product_margin.png" width="48%">
 </p>
 
