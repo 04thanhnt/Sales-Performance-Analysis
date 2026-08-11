@@ -144,7 +144,7 @@ Here is the ERD:
 
 ## 6. Recommendations
 
-Based on the insights and findings above, we recommend the **Sales and Commercial Management teams** consider the following:
+Based on the insights and findings above, here are some actionable recommendations:
 
 - **Prioritize high-value product categories while reviewing underperforming products.** Grinders & Brewers is a major driver of revenue and gross profit, while Subscriptions achieve the highest gross margin. The business should maintain strong support for these categories while reviewing the pricing, costs, and product mix of lower-performing Merchandise products.
 
