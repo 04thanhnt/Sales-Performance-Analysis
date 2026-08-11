@@ -67,9 +67,10 @@ Here is the ERD:
 ### 5.1. Revenue & Regional Performance
 
 ### Revenue is concentrated in West and East
-<img width="412" height="190" alt="Screenshot 2026-08-11 082406" src="https://github.com/user-attachments/assets/ad3716b1-4476-433c-97f6-4abf541f9d29" />
-
-<img width="412" height="272" alt="Screenshot 2026-08-11 082818" src="https://github.com/user-attachments/assets/413bb279-73c7-4016-ae98-ffe8d0690446" />
+<p>
+  <img src="Images/Regional.png" width="48%">
+  <img src="Images/Monthly.png" width="48%">
+</p>
 
 - **West and East jointly contributed approximately 73% of total revenue**, making them the primary revenue-generating regions.
 - West showed particularly strong performance in **Q1**, contributing approximately **44.5–47.5% of quarterly revenue** across the observed years.
@@ -89,9 +90,7 @@ Here is the ERD:
 
 
 ### 5.2. Customer Value & Regional Behavior
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/9df353aa-0016-49dc-be15-80455150c656" alt="Dashboard" width="900">
-</p>
+![Customer&Regional](Images/Customer&Regional.png)
 
 ### Customer volume does not fully explain regional customer value
 
@@ -116,10 +115,10 @@ Here is the ERD:
 
 ### 5.3. Product & Profitability
 
-<img width="542" height="475" alt="Screenshot 2026-08-11 082543" src="https://github.com/user-attachments/assets/55b4fd5b-5200-43d4-8093-4d80c6087529" />
-
-
-<img width="442" height="200" alt="Screenshot 2026-08-11 082633" src="https://github.com/user-attachments/assets/4c9fc948-7012-4ead-a937-c8c6d48adfc8" />
+<p>
+  <img src="Images/Customer&Regional.png" width="48%">
+  <img src="Images/product_margin.png" width="48%">
+</p>
 
 ### Grinders & Brewers is the main revenue and gross profit driver
 
